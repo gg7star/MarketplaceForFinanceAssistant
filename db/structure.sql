@@ -758,6 +758,7 @@ CREATE TABLE `locations` (
   `person_id` varchar(255) DEFAULT NULL,
   `location_type` varchar(255) DEFAULT NULL,
   `community_id` int(11) DEFAULT NULL,
+  `delta` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_locations_on_community_id` (`community_id`) USING BTREE,
   KEY `index_locations_on_listing_id` (`listing_id`) USING BTREE,
@@ -2210,6 +2211,7 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20170801125553'),
 ('20170814125622'),
 ('20170817035830'),
-('20171107063241');
+('20171107063241'),
+('20171220091822');
 
 

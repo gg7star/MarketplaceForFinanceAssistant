@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 5.0.6'
 gem 'compass-rails', '~> 3.0.2'
 
 gem 'jquery-rails', '~> 4.3.1'
-
+gem 'jquery-ui-rails'
 # Bundle the extra gems:
 
 # gem 'heroku' install the Heroku toolbelt (https://toolbelt.heroku.com/) instead (as gem had some problems)
@@ -170,3 +170,13 @@ gem 'intercom'
 
 gem 'twitter_cldr'
 gem 'memoist'
+
+# Additional gem
+gem 'daemons', '~> 1.2.4'
+
+# Location search
+gem 'acts_as_geocodable'
+gem 'geokit-rails'
+
+# Add fontawesome
+gem 'font-awesome-rails'
