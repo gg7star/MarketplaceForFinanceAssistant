@@ -1954,14 +1954,6 @@ figure.fluidratio {
   position: relative;
 }
 
-.search-form {
-  display: inline-block;
-}
-
-.search-form-input {
-  display: inline-block;
-}
-
 .marketplace-lander {
   position: relative;
 
@@ -2002,16 +1994,6 @@ figure.fluidratio {
   .marketplace-lander-content {
     padding: 5em 1em;
     text-align: center;
-
-    @media #{$desktop} {
-      margin-left: 55%;
-      width: 45%;           
-    }
-
-    @media #{$tablet} {
-      margin-left: 30%;
-      width: 70%;
-    }
   }
 
   .marketplace-lander-content-title {

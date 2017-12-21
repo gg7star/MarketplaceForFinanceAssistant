@@ -35,6 +35,12 @@
             = render partial: "location_bar"
           - else
             = render partial: "search_bar"
+    - else
+      .search-form
+        - if(main_search == :location)
+          = render partial: "location_bar"
+        - else
+          = render partial: "search_bar"
 
   - elsif !(is_homepage && FeatureFlagHelper.feature_enabled?(:topbar_v1))
     .browse-view-search-form
@@ -42,7 +48,6 @@
         = render partial: "location_bar"
       - else
         = render partial: "search_bar"
-
 
 - content_for(:head) do
   - if seo_pagination_links[:prev].present?
@@ -65,12 +70,6 @@
       .home-toolbar-show-filters-button-container
         .home-toolbar-show-filters-button#home-toolbar-show-filters
           = t(".filter")
-
-    .search-form
-      - if(main_search == :location)
-        = render partial: "location_bar"
-      - else
-        = render partial: "search_bar"
 
     .home-toolbar-button-group{:class => listing_shape_menu_enabled || @category_menu_enabled ? "filters-enabled" : ""}
       - ["grid", "list", "map"].each do |view_type|
