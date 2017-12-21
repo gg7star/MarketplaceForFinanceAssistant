@@ -20,7 +20,8 @@
   - if @big_cover_photo
     %h1.marketplace-lander-content-title= community_slogan.html_safe
     %p.marketplace-lander-content-description= community_description.html_safe
-    %p.marketplace-lander-content-description= community_sub_description.html_safe
+    %p.marketplace-lander-content-description= community_sub1_description.html_safe
+    %p.marketplace-lander-content-description= community_sub2_description.html_safe
 
     - unless (is_homepage && !@current_community.private? && FeatureFlagHelper.feature_enabled?(:topbar_v1))
       .search-form

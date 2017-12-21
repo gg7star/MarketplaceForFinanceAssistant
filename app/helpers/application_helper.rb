@@ -598,8 +598,12 @@ module ApplicationHelper
     end
   end
 
-  def community_sub_description(truncate=true)
-    truncate ? truncate_html(t("common.default_community_sub_description"), length: 125, omission: "...") : t("common.default_community_sub_description")
+  def community_sub1_description(truncate=true)
+    truncate ? truncate_html(t("common.default_community_sub1_description"), length: 125, omission: "...") : t("common.default_community_sub1_description")
+  end
+
+  def community_sub2_description(truncate=true)
+    truncate ? truncate_html(t("common.default_community_sub2_description"), length: 125, omission: "...") : t("common.default_community_sub2_description")
   end
 
   def email_link_style
