@@ -15,6 +15,11 @@
   @include box-sizing(border-box);
 }
 
+/* Landing page content */
+/* same font-sizes as the mobile, but layout/grid structure from $tablet */
+$mobile-landscape: "(max-width: 767px) and (orientation: landscape)"; 
+$tablet: "(min-width: 768px) and (max-width: 1024px)";
+$desktop: "(min-width: 1025px)";
 /**
   Enable fast click:
 
@@ -1949,6 +1954,14 @@ figure.fluidratio {
   position: relative;
 }
 
+.search-form {
+  display: inline-block;
+}
+
+.search-form-input {
+  display: inline-block;
+}
+
 .marketplace-lander {
   position: relative;
 
@@ -1989,6 +2002,16 @@ figure.fluidratio {
   .marketplace-lander-content {
     padding: 5em 1em;
     text-align: center;
+
+    @media #{$desktop} {
+      margin-left: 55%;
+      width: 45%;           
+    }
+
+    @media #{$tablet} {
+      margin-left: 30%;
+      width: 70%;
+    }
   }
 
   .marketplace-lander-content-title {
