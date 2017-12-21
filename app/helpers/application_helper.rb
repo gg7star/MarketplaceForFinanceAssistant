@@ -598,6 +598,10 @@ module ApplicationHelper
     end
   end
 
+  def community_sub_description(truncate=true)
+    truncate ? truncate_html(t("common.default_community_sub_description"), length: 125, omission: "...") : t("common.default_community_sub_description")
+  end
+
   def email_link_style
     "color:#d96e21; text-decoration: none;"
   end
