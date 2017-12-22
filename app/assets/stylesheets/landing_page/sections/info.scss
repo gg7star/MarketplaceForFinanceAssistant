@@ -116,6 +116,8 @@ $content-padding: 36px;
   // mobile
   margin-bottom: 36px;
 
+  color: #171717;
+
   @media #{$mobile-landscape}, #{$tablet} {
     margin-bottom: 36px;
   }
@@ -276,7 +278,7 @@ $content-padding: 36px;
 }
 
 .info__column-title {
-  color: #525961;
+  color: #171717;
   @include typography__medium;
 
   // mobile

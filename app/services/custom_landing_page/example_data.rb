@@ -6,9 +6,9 @@ module CustomLandingPage
     DATA_STR = <<JSON
 {
   "settings": {
-    "marketplace_id": 9999,
+    "marketplace_id": 1,
     "locale": "en",
-    "sitename": "example"
+    "sitename": "www.needfinancehelp.com"
   },
 
   "page": {
@@ -44,162 +44,52 @@ module CustomLandingPage
       "signup_button_color_hover": {"type": "marketplace_data", "id": "primary_color_darken"}
     },
     {
-      "id": "video",
-      "kind": "video",
-      "variation": "youtube",
-      "youtube_video_id": "UffchBUUIoI",
-      "width": "1280",
-      "height": "720",
-      "text": "Video section can contain one Youtube video. Click to watch!"
-    },
-    {
-      "id": "single_info_without_background_and_cta",
-      "kind": "info",
-      "variation": "single_column",
-      "title": "Single column info section without background image and call to action button",
-      "paragraph": "This is a single column info section without background image and call to action button."
-    },
-    {
-      "id": "markdown_support",
-      "kind": "info",
-      "variation": "single_column",
-      "title": "Limited Markdown support",
-      "paragraph": "Text paragraphs can contain Markdown markup. Limited subset of Markdown syntax blocks are allowed. Allowed blocks are *italic*, **bold**, ***bold+italic***, ~~strike through~~, _underline_ and [links](https://www.sharetribe.com).  \\nLine breaks and...\\n\\n...new paragraphs are also supported"
-    },
-    {
-      "id": "single_info_without_cta",
-      "kind": "info",
-      "variation": "single_column",
-      "title": "Single column info section without call to action button",
-      "paragraph": "This is a single column info section without background image and call to action button.",
-      "background_image": {"type": "assets", "id": "default_hero_background"}
-    },
-    {
-      "id": "single_info_with_background_and_cta",
-      "kind": "info",
-      "variation": "single_column",
-      "title": "Single column info section with background image and call to action button",
-      "paragraph": "This is a single column info section with background image and call to action button.",
-      "button_color": {"type": "marketplace_data", "id": "primary_color"},
-      "button_color_hover": {"type": "marketplace_data", "id": "primary_color_darken"},
-      "button_title": "Go to sharetribe.com",
-      "button_path": {"value": "https://www.sharetribe.com"},
-      "background_image": {"type": "assets", "id": "default_hero_background"},
-      "background_image_variation": "dark"
-    },
-    {
-      "id": "single_info_with_cta",
-      "kind": "info",
-      "variation": "single_column",
-      "title": "Single column info section with call to action button",
-      "paragraph": "This is a single column info section with call to action button.",
-      "button_color": {"type": "marketplace_data", "id": "primary_color"},
-      "button_color_hover": {"type": "marketplace_data", "id": "primary_color_darken"},
-      "button_title": "Contact us",
-      "button_path": {"type": "path", "id": "contact_us"}
-    },
-    {
-      "id": "single_info_with_background_color_and_cta",
-      "kind": "info",
-      "variation": "single_column",
-      "title": "Single column info section with background color and call to action button",
-      "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor. Nulla vitae elit libero.",
-      "button_color": {"type": "marketplace_data", "id": "primary_color"},
-      "button_color_hover": {"type": "marketplace_data", "id": "primary_color_darken"},
-      "button_title": "About",
-      "button_path": {"type": "path", "id" :"about"},
-      "background_color": [166, 76, 94]
-    },
-    {
-      "id": "two_column_info_with_icons_and_buttons",
-      "kind": "info",
+      "id": "info-1-2-column",
+      "kind": "info_with_image",
       "variation": "multi_column",
-      "title": "Two column info section with icons and buttons",
+      "title": "How Does It Work?",
       "button_color": {"type": "marketplace_data", "id": "primary_color"},
       "button_color_hover": {"type": "marketplace_data", "id": "primary_color_darken"},
       "icon_color": {"type": "marketplace_data", "id": "primary_color"},
       "columns": [
         {
-          "icon": "grape",
-          "title": "Column 1",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel.\\n\\nParagraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel.",
-          "button_title": "Go to sharetribe.com",
-          "button_path": {"value": "https://www.sharetribe.com"}
+          "image": {"type": "assets", "id": "landing_page_image_1", "src": "landing_page_image_1.jpeg"},
+          "title": "Search & Hire Professional",
+          "paragraph": "Search for the Finance Professional that meets your specific needs, Discuss requirements and price. Hire professional and pay.",
+          "button_title": "Search for Professional",
+          "button_path": {"value": "https://www.needfinancehelp.com/s"}
         },
         {
-          "icon": "watering-can",
-          "title": "Column 2",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel.",
-          "button_title": "Go to sharetribe.com",
-          "button_path": {"value": "https://www.sharetribe.com"}
+          "image": {"type": "assets", "id": "landing_page_image_2", "src": "landing_page_image_2.jpeg"},
+          "title": "Custom match to professional",
+          "paragraph": "Can not find the perfect match? Create a listing for what you want and we will find a few qualified professionals.",
+          "button_title": "Request Custom Match",
+          "button_path": {"value": "https://www.needfinancehelp.com/en/listings/new"}
         }
       ]
     },
     {
-      "id": "two_column_info_without_icons_and_buttons",
-      "kind": "info",
+      "id": "info-3-4-column",
+      "kind": "info_with_image",
       "variation": "multi_column",
-      "title": "Two column info section without icons and buttons",
-      "columns": [
-        {
-          "title": "Column 1",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel.\\n\\nParagraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel."
-        },
-        {
-          "title": "Column 2",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel."
-        }
-      ]
-    },
-    {
-      "id": "three_column_info_with_icons_and_buttons",
-      "kind": "info",
-      "variation": "multi_column",
-      "title": "Three column info with icons and buttons",
+      "title": "",
       "button_color": {"type": "marketplace_data", "id": "primary_color"},
       "button_color_hover": {"type": "marketplace_data", "id": "primary_color_darken"},
       "icon_color": {"type": "marketplace_data", "id": "primary_color"},
       "columns": [
         {
-          "title": "Column 1",
-          "icon": "quill",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel.",
-          "button_title": "Go to sharetribe.com",
-          "button_path": {"value": "https://www.sharetribe.com"}
+          "title": "Pay for Work Done",
+          "image": {"type": "assets", "id": "landing_page_image_3", "src": "landing_page_image_3.jpeg"},
+          "paragraph": "Invoicing and payment happen through needfinancehelp.com; only pay for work you authorize.",
+          "button_title": "Search for Professional",
+          "button_path": {"value": "https://www.needfinancehelp.com/s"}
         },
         {
-          "title": "Column 2",
-          "icon": "piggy-bank",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel.",
-          "button_title": "Go to sharetribe.com",
-          "button_path": {"value": "https://www.sharetribe.com"}
-        },
-        {
-          "title": "Column 3",
-          "icon": "globe-1",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel.",
-          "button_title": "Go to sharetribe.com",
-          "button_path": {"value": "https://www.sharetribe.com"}
-        }
-      ]
-    },
-    {
-      "id": "three_column_info_without_icons_and_buttons",
-      "kind": "info",
-      "variation": "multi_column",
-      "title": "Three column info without icons and buttons",
-      "columns": [
-        {
-          "title": "Column 1",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel."
-        },
-        {
-          "title": "Column 2",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel."
-        },
-        {
-          "title": "Column 3",
-          "paragraph": "Paragraph. Curabitur blandit tempus porttitor. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel."
+          "title": "Cell Finance Service",
+          "image": {"type": "assets", "id": "landing_page_image_4", "src": "landing_page_image_4.jpeg"},
+          "paragraph": "If you are a qualified and ethical Finance Professional and want to sell your services, post your listing here.",
+          "button_title": "Sell Finance Service",
+          "button_path": {"value": "https://www.needfinancehelp.com/en/listings/new"}
         }
       ]
     },
@@ -283,22 +173,17 @@ module CustomLandingPage
 
   "composition": [
     { "section": {"type": "sections", "id": "hero"}},
-    { "section": {"type": "sections", "id": "markdown_support"}},
-    { "section": {"type": "sections", "id": "single_info_without_background_and_cta"}},
-    { "section": {"type": "sections", "id": "single_info_without_cta"}},
-    { "section": {"type": "sections", "id": "single_info_with_cta"}},
-    { "section": {"type": "sections", "id": "single_info_with_background_and_cta"}},
-    { "section": {"type": "sections", "id": "single_info_with_background_color_and_cta"}},
-    { "section": {"type": "sections", "id": "two_column_info_with_icons_and_buttons"}},
-    { "section": {"type": "sections", "id": "two_column_info_without_icons_and_buttons"}},
-    { "section": {"type": "sections", "id": "three_column_info_with_icons_and_buttons"}},
-    { "section": {"type": "sections", "id": "three_column_info_without_icons_and_buttons"}},
-    { "section": {"type": "sections", "id": "video"}},
+    { "section": {"type": "sections", "id": "info-1-2-column"}},
+    { "section": {"type": "sections", "id": "info-3-4-column"}},
     { "section": {"type": "sections", "id": "footer"}}
   ],
 
   "assets": [
-    { "id": "default_hero_background", "src": "default_hero_background.jpg", "content_type": "image/jpeg" }
+    { "id": "default_hero_background", "src": "default_hero_background.jpg", "content_type": "image/jpeg" },
+    { "id": "landing_page_image_1", "src": "landing_page_image_1.jpeg", "content_type": "image/jpeg" },
+    { "id": "landing_page_image_2", "src": "landing_page_image_2.jpeg", "content_type": "image/jpeg" },
+    { "id": "landing_page_image_3", "src": "landing_page_image_3.jpeg", "content_type": "image/jpeg" },
+    { "id": "landing_page_image_4", "src": "landing_page_image_4.jpeg", "content_type": "image/jpeg" }
   ]
 }
 JSON

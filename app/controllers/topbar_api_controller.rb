@@ -12,7 +12,7 @@ class TopbarApiController < ApplicationController
     p = topbar_props(community, user, community_customization, locale, landing_page)
     m_ctx = marketplace_context(community, user)
     result = { props: p, marketplaceContext: m_ctx }
-
+    Rails.logger.info "==== TopbarApiController: result: #{result.inspect} ===="
     respond_to do |format|
       format.html { render plain: result.to_json.html_safe }
       format.json { render json: result.to_json }

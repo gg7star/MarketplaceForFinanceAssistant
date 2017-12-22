@@ -35,7 +35,15 @@ section_style_class = hero_style_variations[s["background_image_variation"]]
   <div class="hero__content">
     <div class="hero__content-container">
       <h1 class="hero__title"><%= s["title"]["value"] %></h1>
-      <h3 class="hero__subtitle"><%= render partial: "prevent_widows", locals: { text: s["subtitle"]["value"]} %></h3>
+      <h3 class="hero__subtitle">
+        <%= render partial: "prevent_widows", locals: { text: s["subtitle"]["value"]} %>
+        <p class="marketplace-lander-content-description"> 
+          <%= (t("common.default_community_sub1_description")) %>
+        </p>
+        <p class="marketplace-lander-content-description"> 
+          <%= (t("common.default_community_sub2_description")) %>
+        </p>
+      </h3>
 
       <% search_mode = s["variation"]["value"] %>
       <% case search_mode %>
