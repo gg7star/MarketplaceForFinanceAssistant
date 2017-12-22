@@ -85,7 +85,7 @@ module CustomLandingPage
           "button_path": {"value": "https://www.needfinancehelp.com/s"}
         },
         {
-          "title": "Cell Finance Service",
+          "title": "Sell Finance Service",
           "image": {"type": "assets", "id": "landing_page_image_4", "src": "landing_page_image_4.jpeg"},
           "paragraph": "If you are a qualified and ethical Finance Professional and want to sell your services, post your listing here.",
           "button_title": "Sell Finance Service",
