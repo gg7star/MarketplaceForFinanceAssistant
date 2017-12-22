@@ -80,7 +80,7 @@ module CustomLandingPage
         {
           "title": "Pay for Work Done",
           "image": {"type": "assets", "id": "landing_page_image_3", "src": "landing_page_image_3.jpeg"},
-          "paragraph": "Invoicing and payment happen through needfinancehelp.com; only pay for work you authorize.",
+          "paragraph": "Invoicing and payment happen through [needfinancehelp.com](https://www.needfinancehelp.com); only pay for work you authorize.",
           "button_title": "Search for Professional",
           "button_path": {"value": "https://www.needfinancehelp.com/s"}
         },
