@@ -78,7 +78,7 @@ module CustomLandingPage
       "icon_color": {"type": "marketplace_data", "id": "primary_color"},
       "columns": [
         {
-          "title": "Pay for Work Done",
+          "title": "Pay for Work Done to Pay",
           "image": {"type": "assets", "id": "landing_page_image_3", "src": "landing_page_image_3.jpeg"},
           "paragraph": "Invoicing and payment happen through [needfinancehelp.com](https://www.needfinancehelp.com); only pay for work you authorize.",
           "button_title": "Search for Professional",
