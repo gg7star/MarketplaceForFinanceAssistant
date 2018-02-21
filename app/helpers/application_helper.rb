@@ -357,6 +357,13 @@ module ApplicationHelper
       },
       {
         :topic => :manage,
+        :text => t("admin.communities.manage_members.manage_listings"),
+        :icon_class => icon_class("community"),
+        :path => admin_community_community_listings_path(@current_community, sort: "join_date", direction: "desc"),
+        :name => "manage_listings"
+      },
+      {
+        :topic => :manage,
         :text => t("admin.emails.new.send_email_to_members"),
         :icon_class => icon_class("send"),
         :path => new_admin_community_email_path(:community_id => @current_community.id),

@@ -273,6 +273,11 @@ Rails.application.routes.draw do
             post :posting_allowed
           end
         end
+        resources :community_listings do
+          member do
+            get :set_using_allowed
+          end
+        end
         resource :paypal_preferences, only: :index do
 
           # DEPRECATED (2015-11-16)

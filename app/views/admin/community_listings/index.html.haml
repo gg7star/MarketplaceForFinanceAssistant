@@ -1,0 +1,85 @@
+- content_for :title_header do
+  %h1
+    = t("layouts.admin.admin")
+    = "-"
+    = t("admin.communities.manage_members.manage_listings")
+
+= render :partial => "admin/left_hand_navigation", :locals => { :links => admin_links_for(@current_community) }
+
+- content_for :ajax_update do
+  #admin-members-saving-posting-allowed.ajax-update-notice
+    %span.ajax-update-icon{:class => "#{icon_class("loading")} icon-fix" }
+    %span.ajax-update-text
+      = t("admin.communities.manage_members.saving_user_status")
+  #admin-members-saved-posting-allowed.ajax-update-success
+    %span.ajax-update-icon{:class => "#{icon_class("check")} icon-fix" }
+    %span.ajax-update-text
+      = t("admin.communities.manage_members.save_user_status_successful")
+  #admin-members-error-posting-allowed.ajax-update-error
+    = t("admin.communities.manage_members.save_user_status_error")
+
+= render :partial => "layouts/ajax_update_notification"
+
+.left-navi-section
+  %h2= t("admin.communities.manage_members.manage_listings", :community_name => @community.name(I18n.locale))
+
+  = form_tag '', :method => :get do
+    .row
+      .col-8
+        = text_field_tag :q, params[:q], placeholder: t('admin.communities.manage_members.search_by_name_email')
+      .col-4
+        = submit_tag t("admin.communities.manage_members.search"), class: 'button search-button'
+        = link_to    t("admin.communities.manage_members.reset_search"), admin_community_community_memberships_path(@current_community.id)
+
+  %form
+    %table#admin_members_list
+      %thead
+        %tr
+          %th= t("admin.communities.manage_members.name")
+          %th= t("admin.communities.manage_members.display_name")
+          %th= t("admin.communities.manage_members.email")
+          %th= t("admin.communities.manage_members.created_date")
+          %th= t("admin.communities.manage_members.payment_verified")
+          %th{:style => "text-align: center"}= t("admin.communities.manage_members.using_allowed")
+      %tbody
+        - @listings.each do |listing|
+          %tr
+            %td.admin-members-full-name
+              = link_to listing[:author_username]
+            %td
+              = listing[:author_full_name]
+            %td
+              = mail_to listing[:author_email]
+            %td
+              %span= l(listing[:created_at], format: :short_date)
+            %td{:style => "text-align: center"}= check_box_tag "author_payment_verified[#{listing[:id]}]", listing[:id], listing[:author_payment_verified], :class => "admin-members-can-post-listings", disabled: true
+            %td{:style => "text-align: center"}= check_box_tag "using-allowed[#{listing[:id]}]", listing[:id], listing[:allow_use], :class => "admin-members-can-post-listings"
+
+
+  :javascript
+    $(".admin-members-can-post-listings").on("click", function(event) {
+      var using_allowed = this.checked;
+      var community_id = "1";
+      var id = this.value;
+      var url = "/admin/communities/" + community_id + "/community_listings/" + id +"/set_using_allowed";
+      console.log("=== Testing", using_allowed, url);
+      var request = $.get("/admin/communities/" + community_id + "/community_listings/" + id +"/set_using_allowed?using_allowed=" + using_allowed, function(data) {
+        $("#admin-members-error-posting-allowed").hide();
+        $("#admin-members-saved-posting-allowed").show();
+        $(".ajax-update-notification").fadeIn(1000);
+      });
+
+      request.done(function() {
+        
+      })
+
+      request.fail(function() {
+        $("#admin-members-saved-posting-allowed").hide();
+        $("#admin-members-error-posting-allowed").show();
+        $(".ajax-update-notification").fadeIn(1000);
+      });
+
+      request.always(function() {
+        $(".ajax-update-notification").fadeOut(3000);
+      });
+    });

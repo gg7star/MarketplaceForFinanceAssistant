@@ -1,0 +1,6 @@
+development:
+  STRIPE_JS_HOST: https://js.stripe.com
+  REAL_STRIPE: 'true'
+production:
+  STRIPE_JS_HOST: https://js.stripe.com
+  REAL_STRIPE: 'true'
