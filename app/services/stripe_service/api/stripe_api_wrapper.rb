@@ -300,5 +300,18 @@ class StripeService::API::StripeApiWrapper
         Stripe.api_key =~ /^sk_test/
       end
     end
+
+    def create_subscription(community:, plan_id:, listing_title:, person_id:, card_token:, email:, metadata:)
+       with_stripe_payment_config(community) do |payment_settings|
+        plan = Stripe::Plan.retrieve(plan_id)
+        customer = Stripe::Customer.create({
+            email: email,
+            card: card_token,
+            description: "Customer for #{listing_title} listing of #{person_id}"
+          }.merge(metadata: metadata))
+        stripe_subscription = customer.subscriptions.create(plan: plan.id)
+        {customer_id: customer.id, subscription_id: subscription.id}
+      end
+    end
   end
 end

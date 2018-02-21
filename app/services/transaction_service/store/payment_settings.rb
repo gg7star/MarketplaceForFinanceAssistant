@@ -15,7 +15,8 @@ module TransactionService::Store::PaymentSettings
     [:confirmation_after_days, :fixnum, default: 14],
     [:api_client_id, :string],
     [:api_private_key, :string],
-    [:api_publishable_key, :string]
+    [:api_publishable_key, :string],
+    [:plan_id, :string]
   )
 
   PaymentSettings = EntityUtils.define_builder(
@@ -35,7 +36,8 @@ module TransactionService::Store::PaymentSettings
     [:api_publishable_key, :string],
     [:api_visible_private_key, :string],
     [:api_verified, :to_bool],
-    [:api_country, :string]
+    [:api_country, :string],
+    [:plan_id, :string]
   )
 
   module_function

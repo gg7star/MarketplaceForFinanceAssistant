@@ -21,6 +21,7 @@
 #  api_verified                     :boolean
 #  api_visible_private_key          :string(255)
 #  api_country                      :string(255)
+#  plan_id                          :string(255)
 #
 # Indexes
 #

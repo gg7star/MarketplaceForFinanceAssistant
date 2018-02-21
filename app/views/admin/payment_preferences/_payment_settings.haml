@@ -116,7 +116,7 @@
           - else
             = render partial: 'stripe_connected', locals: {stripe_account: stripe_account}
             .paypal-wizard-divider
-            = render partial: 'prefs_form', locals: {payment_prefs_form: stripe_prefs_form, currency: currency, available_currencies: available_currencies, support_email: support_email, pref_mode: 'stripe', knowledge_base_url: knowledge_base_url}
+            = render partial: 'prefs_form', locals: {payment_prefs_form: stripe_prefs_form, currency: currency, available_currencies: available_currencies, support_email: support_email, pref_mode: 'stripe', knowledge_base_url: knowledge_base_url, plan_id: local_assigns[:plan_id]}
 
       - if paypal_enabled && paypal_allowed
         .tab-content.hidden#paypal_tab
@@ -146,4 +146,3 @@
       - content_for :extra_javascript do
         :javascript
           $('#config_paypal_toggle').click();
-

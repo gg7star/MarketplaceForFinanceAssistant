@@ -963,6 +963,7 @@ CREATE TABLE `payment_settings` (
   `api_verified` tinyint(1) DEFAULT NULL,
   `api_visible_private_key` varchar(255) DEFAULT NULL,
   `api_country` varchar(255) DEFAULT NULL,
+  `plan_id` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_payment_settings_on_community_id` (`community_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -2214,6 +2215,7 @@ INSERT INTO `schema_migrations` (version) VALUES
 ('20170817035830'),
 ('20171107063241'),
 ('20171220091822'),
-('20180219030541');
+('20180219030541'),
+('20180221111610');
 
 

@@ -139,7 +139,8 @@ class Admin::PaymentPreferencesController < Admin::AdminBaseController
       commission_from_seller: tx_settings[:commission_from_seller],
       minimum_listing_price: Money.new(tx_settings[:minimum_price_cents], currency),
       minimum_transaction_fee: Money.new(tx_settings[:minimum_transaction_fee_cents], currency),
-      marketplace_currency: currency
+      marketplace_currency: currency,
+      plan_id: tx_settings[:plan_id]
     )
   end
 
@@ -169,7 +170,8 @@ class Admin::PaymentPreferencesController < Admin::AdminBaseController
     :minimum_commission,
     :minimum_transaction_fee,
     :marketplace_currency,
-    :mode
+    :mode,
+    :plan_id
     ).with_validations do
       validates_numericality_of(
         :commission_from_seller,
@@ -211,7 +213,8 @@ class Admin::PaymentPreferencesController < Admin::AdminBaseController
             payment_process: :preauthorize,
             commission_from_seller: form.commission_from_seller,
             minimum_transaction_fee_cents: form.minimum_transaction_fee.try(:cents),
-            minimum_transaction_fee_currency: currency
+            minimum_transaction_fee_currency: currency,
+            plan_id: form.plan_id
           }.compact
         elsif form.mode == 'paypal'
           {
@@ -222,7 +225,6 @@ class Admin::PaymentPreferencesController < Admin::AdminBaseController
             minimum_transaction_fee_currency: currency,
             minimum_price_cents: form.minimum_listing_price.try(:cents),
             minimum_price_currency: currency
-
           }.compact
         else
           {
@@ -230,7 +232,8 @@ class Admin::PaymentPreferencesController < Admin::AdminBaseController
             payment_process: :preauthorize,
             commission_from_seller: form.commission_from_seller,
             minimum_price_cents: form.minimum_listing_price.try(:cents),
-            minimum_price_currency: currency
+            minimum_price_currency: currency,
+            plan_id: form.plan_id
           }.compact
         end
 
@@ -287,13 +290,14 @@ class Admin::PaymentPreferencesController < Admin::AdminBaseController
     tx_commission = params[:commission_from_seller] || tx_settings[:commission_from_seller]
     tx_commission = tx_commission.present? ? tx_commission.to_i : nil
     tx_min_price = parse_money_with_default(params[:minimum_listing_price], tx_settings[:minimum_price_cents], currency)
-
+    tx_plan_id = params[:plan_id]
     {
       minimum_listing_price: tx_min_price,
       minimum_transaction_fee: tx_fee,
       commission_from_seller: tx_commission,
       marketplace_currency: currency,
       mode: params[:mode],
+      plan_id: tx_plan_id
     }
   end
 

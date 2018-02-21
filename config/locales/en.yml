@@ -560,6 +560,7 @@ en:
       save_settings: "Save settings"
       minimum_listing_price_below_tx_fee: "The minimum transaction size has to be greater than or equal to the minimum transaction fee: %{minimum_transaction_fee}."
       minimum_listing_price_below_min: "The minimum transaction size has to be greater than the minimum commission %{minimum_commission}."
+      plan_id_label: "Plan ID:"
     payment_preferences:
       title: "Payment system preferences"
       general_settings: "1. General settings"
